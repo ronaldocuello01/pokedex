@@ -5,7 +5,7 @@ import useAuth from "../../../hooks/useAuth";
 import { useFonts } from 'expo-font';
 
 const UserInformation = () => {
-    const { auth, logout } = useAuth()
+    const { auth, favoritePokes, logout } = useAuth()
 
     const [fontsLoaded] = useFonts({
         'Creepster': require('../../../../assets/fonts/Creepster-Regular.ttf'),
@@ -15,7 +15,7 @@ const UserInformation = () => {
         return null
     }
 
-    const favPokemons = 0;
+    const favPokemons = favoritePokes.length;
 
 
     return (

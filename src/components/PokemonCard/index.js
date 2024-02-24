@@ -1,19 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableWithoutFeedback } from 'react-native'
-
 import { useNavigation } from '@react-navigation/native'
-
 import { getPokemonColorMain } from '../../utils/globalFunctions'
 
 const PokemonCard = (props) => {
-    const { pokemon } = props;
+    const { pokemon, externalScreen } = props;
     const navigation = useNavigation();
-
     const pokemonColor = getPokemonColorMain(pokemon.type);
     const boxStyle = { ...styles.card, backgroundColor: pokemonColor }
 
     const goToPokemon = () => {
-        navigation.navigate('Pokemon', { id: pokemon.id, urlInfo: pokemon.urlInfo } )
+        externalScreen ?
+        navigation.navigate('Pokemon', { id: pokemon.id, infoBy: 'id' } ) : 
+        navigation.navigate('Pokemon', { id: pokemon.id, infoBy: 'url', urlInfo: pokemon.urlInfo } );
     }
     
     return (

@@ -1,6 +1,6 @@
 export const user = {
-    username: "ron",
-    password: "111",
+    username: "a",
+    password: "a",
 };
 
 export const userDetails = {
@@ -8,4 +8,5 @@ export const userDetails = {
     firstName: "Ronaldo",
     lastName: "Cuello Arango",
     email: "ronald007@gmail.com",
+    favoritePokemons: []
 };

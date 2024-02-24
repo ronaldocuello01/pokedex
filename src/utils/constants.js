@@ -1,4 +1,5 @@
 export const POKE_API_HOST = 'https://pokeapi.co/api/v2/';
+export const FAVORITE_POKEMON_STORAGE_NAME = 'favorites';
 export const POKEMON_TYPE_COLORS = {
     normal: ["#B3B37F", "#6E6E4E"],
     fighting: ["#D9362E", "#7D2C24"],

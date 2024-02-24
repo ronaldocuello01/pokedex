@@ -1,11 +1,9 @@
 import React from 'react'
 import { StyleSheet, FlatList, ActivityIndicator } from 'react-native'
-
 import { PokemonCard } from '../PokemonCard';
 
 const PokemonList = (props) => {
-    const { pokemons, loadPokemons, areNext, isLoading } = props;
-
+    const { pokemons, loadPokemons, areNext, isLoading, externalScreen } = props;
     const loadMore = () => {
         loadPokemons();
     }
@@ -17,7 +15,7 @@ const PokemonList = (props) => {
             numColumns={2}
             showsVerticalScrollIndicator={false}
             keyExtractor={(pokemon) => String(pokemon.id)}
-            renderItem={({item}) => <PokemonCard pokemon={item} />}
+            renderItem={({item}) => <PokemonCard pokemon={item} externalScreen={externalScreen} />}
             contentContainerStyle={styles.flatListContent}
             onEndReached={!isLoading && areNext && loadMore}
             onEndReachedThreshold={0.1}

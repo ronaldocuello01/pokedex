@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { SafeAreaView } from 'react-native'
-
 import { getPokemonApi, getPokemonDetailsApi } from '../../api/pokemon';
-
 import { PokemonList } from '../../components/PokemonList';
 
-
 const PokedexScreen = () => {
-
   const [pokemons, setPokemons] = useState([]);
   const [nextUrl, setNextUrl] = useState();
   const [loading, setLoading] = useState(false);
@@ -52,6 +48,7 @@ const PokedexScreen = () => {
         loadPokemons={loadPokemons} 
         areNext={nextUrl} 
         isLoading={loading}
+        externalScreen={false}
       />
     </SafeAreaView>
   )

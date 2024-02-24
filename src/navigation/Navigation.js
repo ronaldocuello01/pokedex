@@ -58,7 +58,7 @@ const renderIcon = (icon) => {
 
 const Navigation = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName='Poke'>
 
         {
             tabs.map(
